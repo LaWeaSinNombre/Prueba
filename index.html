@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi página web</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://apis.google.com/js/api.js"></script>
+
+</head>
+<body>
+	<nav class="menu">
+		<ul>
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#">Tendencias</a></li>
+			<li><a href="#">Historial</a></li>
+			<li><a href="#">Más</a></li>
+		</ul>
+	</nav>
+	<iframe width="1120" height="630" src="https://www.youtube.com/embed/-wb_Coby-Cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+	<script>
+		// Carga la biblioteca de JavaScript de la API de datos de YouTube.
+		gapi.load('client', function() {
+		  // Inicializa la biblioteca de JavaScript de la API de datos de YouTube.
+		  gapi.client.init({
+			apiKey:'AIzaSyADKFWQ6zsiamqCti7IIW-Hg4QCeg0crN8'
+		  }).then(function() {
+			// Realiza una solicitud GET para obtener la información del video.
+			return gapi.client.request({
+			  'path': 'https://www.googleapis.com/youtube/v3/videos',
+			  'params': {
+				'part': 'snippet',
+				'id': 'QDmu3UpDtZE&ab'
+			  }
+			});
+		  }).then(function(response) {
+			// Muestra la descripción del video en la consola del navegador.
+			console.log(response.result.items[0].snippet.description);
+		  }, function(reason) {
+			console.log('Error: ' + reason.result.error.message);
+		  });
+		});
+	  </script>
+	  
+</body>
+</html>

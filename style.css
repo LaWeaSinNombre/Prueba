@@ -1,0 +1,26 @@
+nav {
+	background-color: #282828;
+	color: #fff;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 1rem;
+}
+
+nav li:hover {
+	background-color: #f8f8f8;
+	color: #282828;
+}
+
+nav a {
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+}
